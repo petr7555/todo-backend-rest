@@ -21,7 +21,7 @@ app.get('/todos', async (req, res) => {
     try {
         const client = await pool.connect();
         const result = await client.query('SELECT * FROM todos');
-        console.info("A todos have been queried.");
+        console.info("Todos have been queried.");
         res.send(result.rows);
         client.release();
     } catch (err) {
